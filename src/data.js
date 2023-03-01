@@ -1,14 +1,14 @@
 import anima from "./assets/anima_terra_in_context_elevation.jpg";
 import rosahus from "./assets/rosagipshus2_mindre.png";
-import blågipsvägg from "./assets/blåvåggips2_mindre.png";
+import blågipsvägg from "./assets/blavaggips2_mindre.png";
 import orange from "./assets/frilagt_orange_ljus.png";
-import trapp from "./assets/trappafärg_mindre.png";
-import portal from "./assets/portal_isomånarivatten_mindre.png";
+import trapp from "./assets/trappafarg_mindre.png";
+import portal from "./assets/portal_isomanarivatten_mindre.png";
 import skarven from "./assets/skarvenstornmodell_frilagd_mindre.png";
 import rundadtrappa from "./assets/rundadtrappagips2_mindre.png";
 import setdesignskulptur from "./assets/setdesignskulpturer_mindre.png";
 import fountain from "./assets/imaged_imagined_space_fountain.jpg";
-import skulpturergips from "./assets/tvåskulpturergips_mindre.png";
+import skulpturergips from "./assets/tvaskulpturergips_mindre.png";
 export const portfolioData = [
   {
     id: 1,
