@@ -1,8 +1,9 @@
 import { Menu, SubMenu, Item } from "burger-menu";
 import "burger-menu/lib/index.css";
 import React, { useState } from "react";
-import { BiMenu } from "react-icons/bi";
+import { VscMenu } from "react-icons/vsc";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,62 +11,89 @@ const Burger = () => {
     textDecoration: "underline",
   };
 
-  let activeClassName = "underline";
-
   return (
     <>
-      <div onClick={() => setIsOpen(!isOpen)}>
-        <BiMenu style={{ fontSize: "2rem" }} />
-      </div>
+      <BurgerWrapper onClick={() => setIsOpen(!isOpen)}>
+        <VscMenu style={{ fontSize: "1rem" }} />
+      </BurgerWrapper>
       <Menu
         className='burger-menu'
         isOpen={isOpen}
         selectedKey={"entry"}
         onClose={() => setIsOpen(false)}
       >
-        <div
-          className='container'
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <nav>
+        <Container className='container'>
+          <StyledNav>
             <ul>
               <li>
                 <NavLink
                   to='/'
-                  style={({ isActive }) => (isActive ? activeStyle : undefined)}
+                  onClick={() => setIsOpen(false)}
+                  style={({ isActive }) =>
+                    isActive
+                      ? activeStyle
+                      : {
+                          textDecoration: "none",
+                        }
+                  }
                 >
                   Home
                 </NavLink>
               </li>
+
               <li>
                 <NavLink
-                  to='about'
-                  className={({ isActive }) =>
-                    isActive ? activeClassName : undefined
+                  to='contact'
+                  onClick={() => setIsOpen(false)}
+                  style={({ isActive }) =>
+                    isActive
+                      ? activeStyle
+                      : {
+                          textDecoration: "none",
+                        }
                   }
                 >
-                  About
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to='contact'>
-                  {({ isActive }) => (
-                    <span className={isActive ? activeClassName : undefined}>
-                      Contact
-                    </span>
-                  )}
+                  About / Contact
                 </NavLink>
               </li>
             </ul>
-          </nav>
-        </div>
+          </StyledNav>
+        </Container>
       </Menu>
     </>
   );
 };
+
+const BurgerWrapper = styled.div`
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  cursor: pointer;
+`;
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+  height: 100vh;
+`;
+
+const StyledNav = styled.nav`
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      margin: 0.5rem 0;
+      a {
+        text-decoration: none;
+        color: #222;
+        font-size: 1.5rem;
+      }
+    }
+  }
+`;
 
 export default Burger;

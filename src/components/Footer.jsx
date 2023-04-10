@@ -10,14 +10,14 @@ const Footer = () => {
         </FooterText>
         <div>
           <SocialLink
-            href='https://linkedin.com/example-username'
+            href='https://www.linkedin.com/in/my-com%C3%A9t-520112242/?originalSubdomain=se'
             target='_blank'
             rel='noopener noreferrer'
           >
             <FaLinkedin style={{ color: "#333", fontSize: "1.5rem" }} />
           </SocialLink>
           <SocialLink
-            href='https://instagram.com/example-username'
+            href='https://www.instagram.com/studiomycomet/?igshid=YmMyMTA2M2Y%3D'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -33,13 +33,18 @@ const FooterWrapper = styled.div`
 `;
 
 const FooterContainer = styled.footer`
-  background-color: #f2f2f2;
+  background-color: #fff;
   color: #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 50px;
   padding: 0 50px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    height: 60px;
+    padding: 0 10px;
+  }
 `;
 
 const FooterText = styled.p`

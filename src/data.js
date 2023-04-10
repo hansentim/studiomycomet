@@ -1,14 +1,25 @@
-import anima from "./assets/anima_terra_in_context_elevation.jpg";
-import rosahus from "./assets/rosagipshus2_mindre.png";
-import blågipsvägg from "./assets/blavaggips2_mindre.png";
-import orange from "./assets/frilagt_orange_ljus.png";
-import trapp from "./assets/trappafarg_mindre.png";
-import portal from "./assets/portal_isomanarivatten_mindre.png";
-import skarven from "./assets/skarvenstornmodell_frilagd_mindre.png";
-import rundadtrappa from "./assets/rundadtrappagips2_mindre.png";
-import setdesignskulptur from "./assets/setdesignskulpturer_mindre.png";
-import fountain from "./assets/imaged_imagined_space_fountain.jpg";
-import skulpturergips from "./assets/tvaskulpturergips_mindre.png";
+import magicHands from "./assets/1_hands_magic.jpg";
+import orangeCandle from "./assets/2_orange_candle.png";
+import mirror from "./assets/3_mirror_on_chair.jpg";
+import roundedStair from "./assets/4_rounded_stair_plaster.png";
+import setdesignSculptures from "./assets/5_setdesign_sculptures.png";
+import skarvenModel from "./assets/6_skarven_large_model.png";
+import blueWave from "./assets/7_blue_wave_plaster.png";
+import isometricDrawings from "./assets/8_isometric_drawings.jpg";
+import stairsColor from "./assets/9_stairs_color.png";
+import pinkHouse from "./assets/10_pink_plaster_house.png";
+import portal from "./assets/11_portal_isomoons_inwater.png";
+import pinkStair from "./assets/12_pink_stair_plaster.png";
+import solitaryWorker from "./assets/13_solitaryworker_desktop.png";
+import workplace from "./assets/14_workplaceakvarellsection.png";
+import twoSculptures from "./assets/15_two_sculptures_plaster.png";
+import lightShadow from "./assets/16_light_shadow.png";
+import animaTerra from "./assets/17_anima_terra_in_context_elevation.png";
+import greenSetdesign from "./assets/18_green_setdesign.png";
+import imagendSpaceFountain from "./assets/19_imagined_space_fountain.png";
+import handsEye from "./assets/20_hands_eye.jpg";
+import waterWithReflection from "./assets/21_water_with_reflection.png";
+
 export const portfolioData = [
   {
     id: 1,
@@ -16,9 +27,9 @@ export const portfolioData = [
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     details: "bla bla bla bla bla",
-    image: anima,
+    image: magicHands,
     style: {
-      width: "800px",
+      //width: "800px",
     },
   },
   {
@@ -26,9 +37,9 @@ export const portfolioData = [
     title: "Project Two",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: rosahus,
+    image: orangeCandle,
     style: {
-      width: "350px",
+      //width: "350px",
     },
   },
   {
@@ -36,10 +47,10 @@ export const portfolioData = [
     title: "Project Three",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: blågipsvägg,
+    image: mirror,
     style: {
-      width: "300px",
-      paddingBotton: "300px",
+      //width: "300px",
+      // paddingBotton: "300px",
     },
   },
   {
@@ -47,9 +58,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: orange,
+    image: roundedStair,
     style: {
-      width: "280px",
+      //width: "280px",
     },
   },
   {
@@ -57,9 +68,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: trapp,
+    image: setdesignSculptures,
     style: {
-      width: "300px",
+      //width: "300px",
     },
   },
   {
@@ -67,9 +78,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: portal,
+    image: skarvenModel,
     style: {
-      width: "400px",
+      //width: "400px",
     },
   },
   {
@@ -77,9 +88,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: skarven,
+    image: blueWave,
     style: {
-      width: "400px",
+      //width: "400px",
     },
   },
   {
@@ -87,9 +98,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: rundadtrappa,
+    image: isometricDrawings,
     style: {
-      width: "400px",
+      //: "400px",
     },
   },
   {
@@ -97,9 +108,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: setdesignskulptur,
+    image: stairsColor,
     style: {
-      width: "400px",
+      //width: "400px",
     },
   },
   {
@@ -107,9 +118,9 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: fountain,
+    image: pinkHouse,
     style: {
-      width: "600px",
+      //width: "600px",
     },
   },
   {
@@ -117,9 +128,109 @@ export const portfolioData = [
     title: "Project Four",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
-    image: skulpturergips,
+    image: portal,
     style: {
-      width: "400px",
+      //width: "400px",
+    },
+  },
+  {
+    id: 12,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: pinkStair,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 13,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: solitaryWorker,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 14,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: workplace,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 15,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: twoSculptures,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 16,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: lightShadow,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 17,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: animaTerra,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 18,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: greenSetdesign,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 19,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: imagendSpaceFountain,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 20,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: handsEye,
+    style: {
+      //width: "400px",
+    },
+  },
+  {
+    id: 21,
+    title: "Project Four",
+    about:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
+    image: waterWithReflection,
+    style: {
+      //width: "400px",
     },
   },
 ];

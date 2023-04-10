@@ -1,7 +1,6 @@
 import Nav from "./components/Nav";
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import DetailedInfo from "./pages/DetailedInfo";
@@ -9,14 +8,13 @@ import DetailedInfo from "./pages/DetailedInfo";
 function App() {
   return (
     <div className='App'>
-      {/* <Nav /> */}
+      <Nav />
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/detailedinfo/:id' element={<DetailedInfo />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

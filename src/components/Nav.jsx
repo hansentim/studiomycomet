@@ -24,17 +24,11 @@ const Nav = () => {
         <Burger />
       ) : (
         <NavContainer>
-          <NavList>
-            <NavItem>
-              <NavLinkStyled to='/'>Home</NavLinkStyled>
-            </NavItem>
-            <NavItem>
-              <NavLinkStyled to='about'>About</NavLinkStyled>
-            </NavItem>
-            <NavItem>
-              <NavLinkStyled to='contact'>Contact</NavLinkStyled>
-            </NavItem>
-          </NavList>
+          <div className='box'>
+            <NavList>
+              <NavLinkStyled to='/contact'>About / Contact</NavLinkStyled>
+            </NavList>
+          </div>
         </NavContainer>
       )}
     </>
@@ -44,21 +38,18 @@ const Nav = () => {
 const NavContainer = styled.nav`
   width: 100vw;
   height: 6vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding: 1rem 2rem;
+
+  padding: 1rem 7rem 0 0;
+
+  .box {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
 `;
 
 const NavList = styled.ul`
-  display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
-`;
-
-const NavItem = styled.li`
-  margin: 0 3rem;
 `;
 
 const NavLinkStyled = styled(NavLink)`
