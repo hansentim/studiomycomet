@@ -5,13 +5,21 @@ import ImageBox from ".././components/ImageBox";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const fadeIn = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { opacity: 1, scale: 1 },
+  transition: { duration: 0.6 },
 };
 
 function Home() {
+  const navigate = useNavigate();
+
+  const handleImageClick = (route) => {
+    navigate(route);
+  };
+
   return (
     <HomeWrapper>
       <ImageBox />
@@ -37,6 +45,7 @@ function Home() {
                 src={item.image}
                 alt={item.title}
                 style={item.style}
+                onClick={() => handleImageClick(item.route)}
               />
             </FadeInWhenVisible>
           </ItemContainer>
@@ -46,33 +55,6 @@ function Home() {
     </HomeWrapper>
   );
 }
-
-const HomeWrapper = styled.div`
-  width: 90vw;
-  justify-content: center;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    width: 100vw;
-    padding: 1rem;
-  }
-`;
-
-const PortfolioContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 5rem;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ItemContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 4rem;
-`;
 
 const FadeInWhenVisible = ({ children }) => {
   const { ref, inView } = useInView();
@@ -104,6 +86,33 @@ const StyledImage = styled.img`
   @media (max-width: 768px) {
     height: 60vh;
   }
+`;
+
+const HomeWrapper = styled.div`
+  width: 90vw;
+  justify-content: center;
+  margin: 0 auto;
+  @media (max-width: 768px) {
+    width: 100vw;
+    padding: 1rem;
+  }
+`;
+
+const PortfolioContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const ItemContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
 `;
 
 export default Home;

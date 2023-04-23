@@ -1,4 +1,3 @@
-import magicHands from "./assets/1_hands_magic.jpg";
 import orangeCandle from "./assets/2_orange_candle.png";
 import mirror from "./assets/3_mirror_on_chair.jpg";
 import roundedStair from "./assets/4_rounded_stair_plaster.png";
@@ -19,11 +18,13 @@ import greenSetdesign from "./assets/18_green_setdesign.png";
 import imagendSpaceFountain from "./assets/19_imagined_space_fountain.png";
 import handsEye from "./assets/20_hands_eye.jpg";
 import waterWithReflection from "./assets/21_water_with_reflection.png";
+import magicHands from "./assets/1_hands_magic.jpg";
 
 export const portfolioData = [
   {
     id: 1,
-    title: "Project One",
+    title: "Book Illustrations",
+    route: "/book-illustrations",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     details: "bla bla bla bla bla",
