@@ -7,6 +7,40 @@ import HandOga from "../assets/book/HandOga.jpg";
 import HanderMagi from "../assets/book/HanderMagi.jpg";
 import ImageBoxDetails from "../components/ImageBoxDetails";
 import { useNavigate } from "react-router-dom";
+import Prints from "../components/Prints";
+
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect } from "react";
+
+const fadeIn = {
+  hidden: { opacity: 0, scale: 0.5 },
+  visible: { opacity: 1, scale: 1 },
+  transition: { duration: 0.6 },
+};
+
+const FadeInWhenVisible = ({ children }) => {
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    }
+  }, [animation, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial='hidden'
+      animate={animation}
+      variants={fadeIn}
+      transition={{ duration: 1 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 function BookIllustrations() {
   const navigate = useNavigate();
@@ -31,42 +65,54 @@ function BookIllustrations() {
         </p>
 
         <ImageWrapper>
-          <img
-            className='header-images'
-            src={Stjarnskott}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
-          <img
-            className='header-images'
-            src={Trappor}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
-          <img
-            className='header-images'
-            src={Berg}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
-          <img
-            className='header-images'
-            src={Gemenskap}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
-          <img
-            className='header-images'
-            src={HandOga}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
-          <img
-            className='header-images'
-            src={HanderMagi}
-            alt='illustration-star'
-            onContextMenu={handleContextMenu}
-          />
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={Stjarnskott}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={Trappor}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={Berg}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={Gemenskap}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={HandOga}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='header-images'
+              src={HanderMagi}
+              alt='illustration-star'
+              onContextMenu={handleContextMenu}
+            />
+          </FadeInWhenVisible>
         </ImageWrapper>
         <p className='layout-info'>
           Spreads with illustrations from, ”Patterns of Light and Dark”. <br />{" "}
@@ -79,6 +125,7 @@ function BookIllustrations() {
             Linnea Paulsson Neppelberg
           </a>
         </p>
+        <Prints />
       </InnerWrapper>
     </Wrapper>
   );
@@ -152,7 +199,7 @@ const ImageWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 
   .header-images {
     width: 100%;

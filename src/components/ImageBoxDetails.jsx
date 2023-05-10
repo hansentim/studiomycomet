@@ -17,7 +17,7 @@ const Box = styled.div`
   margin-bottom: 0.5rem;
   margin-top: -2.5rem;
   img {
-    height: 100px;
+    height: 80px;
   }
   @media (max-width: 768px) {
     margin-bottom: 1.5rem;
