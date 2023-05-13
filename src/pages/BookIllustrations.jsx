@@ -1,4 +1,3 @@
-import styled from "styled-components";
 import Stjarnskott from "../assets/book/Print_A_stjarnskott_LITEN.jpg";
 import Trappor from "../assets/book/PrintA_trappor_LITEN.jpg";
 import Berg from "../assets/book/Berg.jpg";
@@ -12,11 +11,12 @@ import Prints from "../components/Prints";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
+import styled from "styled-components";
 
 const fadeIn = {
-  hidden: { opacity: 0, scale: 0.5 },
+  hidden: { opacity: 0, scale: 0.6 },
   visible: { opacity: 1, scale: 1 },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.4 },
 };
 
 const FadeInWhenVisible = ({ children }) => {
@@ -141,7 +141,7 @@ const breakpoints = {
 const Wrapper = styled.div`
   padding: 0 3rem;
 
-  @media (max-width: ${breakpoints.mobile}) {
+  @media only screen and (max-width: ${breakpoints.mobile}) {
     padding: 0 1rem;
   }
 `;
@@ -182,16 +182,18 @@ const InnerWrapper = styled.div`
     padding-left: 2px;
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
-    width: 95vw;
-  }
-
-  @media (min-width: ${breakpoints.tablet}) and (max-width: ${breakpoints.laptop}) {
-    width: 80vw;
-  }
-
-  @media (max-width: ${breakpoints.largeScreen}) {
-    width: 60vw;
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    h1 {
+      font-size: 1.5rem;
+    }
+    .subtitle,
+    .second-subtitle {
+      font-size: 0.8rem;
+    }
+    .layout-info {
+      font-size: 1rem;
+    }
   }
 `;
 
@@ -206,9 +208,9 @@ const ImageWrapper = styled.div`
     height: auto;
   }
 
-  @media (max-width: ${breakpoints.mobile}) {
-    //grid-template-columns: 1fr;
-    grid-gap: 0.5rem;
+  @media only screen and (max-width: ${breakpoints.mobile}) {
+    grid-gap: 0.7rem;
+    margin-bottom: 2rem;
   }
 `;
 

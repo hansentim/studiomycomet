@@ -8,9 +8,9 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const fadeIn = {
-  hidden: { opacity: 0, scale: 0.5 },
+  hidden: { opacity: 0, scale: 0.6 },
   visible: { opacity: 1, scale: 1 },
-  transition: { duration: 0.6 },
+  transition: { duration: 0.4 },
 };
 
 function Home() {
@@ -45,7 +45,8 @@ function Home() {
                 src={item.image}
                 alt={item.title}
                 style={item.style}
-                onClick={() => handleImageClick(item.route)}
+                onClick={() => item.route && handleImageClick(item.route)}
+                clickable={!!item.route}
               />
             </FadeInWhenVisible>
           </ItemContainer>
@@ -83,6 +84,13 @@ const StyledImage = styled.img`
   width: 100%;
   height: 55vh;
   object-fit: contain;
+  cursor: ${(props) => (props.clickable ? "pointer" : "default")};
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: ${(props) => (props.clickable ? "scale(1.1)" : "none")};
+  }
+
   @media (max-width: 768px) {
     height: 60vh;
   }

@@ -120,6 +120,7 @@ const PrintContainer = styled.div`
   @media (max-width: ${breakpoints.mobile}) {
     //grid-template-columns: 1fr;
     grid-gap: 0.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -140,6 +141,12 @@ const Cover = styled.div`
     width: 100%;
     height: auto;
     padding: 1rem;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    .box {
+      width: 100%;
+    }
   }
 `;
 
