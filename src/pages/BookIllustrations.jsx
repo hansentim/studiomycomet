@@ -209,6 +209,7 @@ const ImageWrapper = styled.div`
   }
 
   @media only screen and (max-width: ${breakpoints.mobile}) {
+    grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.7rem;
     margin-bottom: 2rem;
   }
