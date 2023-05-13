@@ -75,21 +75,25 @@ function Prints() {
             alt='illustration-star'
           />
         </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <img
-            className='cover-images'
-            src={framsida}
-            alt='illustration-star'
-          />
-        </FadeInWhenVisible>
-        <FadeInWhenVisible>
-          <img
-            className='cover-images'
-            src={colophon}
-            alt='illustration-star'
-          />
-        </FadeInWhenVisible>
       </PrintContainer>
+      <Cover>
+        <div className='box'>
+          <FadeInWhenVisible>
+            <img
+              className='cover-images'
+              src={framsida}
+              alt='illustration-star'
+            />
+          </FadeInWhenVisible>
+          <FadeInWhenVisible>
+            <img
+              className='cover-images'
+              src={colophon}
+              alt='illustration-star'
+            />
+          </FadeInWhenVisible>
+        </div>
+      </Cover>
     </>
   );
 }
@@ -102,24 +106,40 @@ const breakpoints = {
 };
 
 const PrintContainer = styled.div`
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 
   .book-images {
     width: 100%;
     height: auto;
   }
 
-  .cover-images {
-    width: 50%;
-    height: auto;
-  }
-
   @media (max-width: ${breakpoints.mobile}) {
     //grid-template-columns: 1fr;
     grid-gap: 0.5rem;
+  }
+`;
+
+const Cover = styled.div`
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  place-content: center;
+
+  .box {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .cover-images {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
   }
 `;
 

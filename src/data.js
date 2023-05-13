@@ -217,6 +217,7 @@ export const portfolioData = [
   {
     id: 20,
     title: "Project Four",
+    route: "/book-illustrations",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     image: handsEye,
