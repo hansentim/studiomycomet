@@ -9,6 +9,8 @@ import Berg from "../assets/book/uppslag_berg.jpg";
 import Gemenskap from "../assets/book/uppslag_gemenskap.jpg";
 import HanderOga from "../assets/book/uppslag_hander_oga.jpg";
 import Trapphus from "../assets/book/uppslag_trapphus.jpg";
+import framsida from "../assets/book/book_framsida.jpg";
+import colophon from "../assets/book/book_colophon.jpg";
 
 const fadeIn = {
   hidden: { opacity: 0, scale: 0.5 },
@@ -73,6 +75,20 @@ function Prints() {
             alt='illustration-star'
           />
         </FadeInWhenVisible>
+        <FadeInWhenVisible>
+          <img
+            className='cover-images'
+            src={framsida}
+            alt='illustration-star'
+          />
+        </FadeInWhenVisible>
+        <FadeInWhenVisible>
+          <img
+            className='cover-images'
+            src={colophon}
+            alt='illustration-star'
+          />
+        </FadeInWhenVisible>
       </PrintContainer>
     </>
   );
@@ -93,6 +109,11 @@ const PrintContainer = styled.div`
 
   .book-images {
     width: 100%;
+    height: auto;
+  }
+
+  .cover-images {
+    width: 50%;
     height: auto;
   }
 
