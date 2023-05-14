@@ -1,10 +1,44 @@
 import styled from "styled-components";
 import ImageBoxDetails from "../components/ImageBoxDetails";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState, cloneElement } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import mirrorChair from "../assets/mirror/spegel_stol.jpg";
 import mirrorDetails from "../assets/mirror/spegel_details.png";
 import mirrorFrame from "../assets/mirror/spegel_closeup.jpg";
+
+const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
+
+const WipeInWhenVisible = ({ children }) => {
+  const { ref, inView } = useInView();
+  const [isLoaded, setIsLoaded] = useState(false);
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView && isLoaded) {
+      animation.start({
+        WebkitMaskImage: visibleMask,
+        maskImage: visibleMask,
+      });
+    }
+  }, [animation, inView, isLoaded]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
+      animate={animation}
+      transition={{ duration: 1, delay: 1 }}
+    >
+      {cloneElement(children, {
+        onLoad: () => setIsLoaded(true),
+      })}
+    </motion.div>
+  );
+};
 
 function Mirror() {
   const navigate = useNavigate();
@@ -15,10 +49,15 @@ function Mirror() {
         <h1>”This is Fine / Is This Fine?”</h1>
         <p>February 2023. Hand sculpted and hand painted frame with mirror.</p>
         <p>March 2023</p>
-
-        <img src={mirrorChair} alt='designed mirror on chair' />
-        <img src={mirrorDetails} alt='handpainet mirror' />
-        <img src={mirrorFrame} alt='hand sculpted mirror frame' />
+        <WipeInWhenVisible>
+          <img src={mirrorChair} alt='designed mirror on chair' />
+        </WipeInWhenVisible>
+        <WipeInWhenVisible>
+          <img src={mirrorDetails} alt='handpainet mirror' />
+        </WipeInWhenVisible>
+        <WipeInWhenVisible>
+          <img src={mirrorFrame} alt='hand sculpted mirror frame' />
+        </WipeInWhenVisible>
       </MirrorContainer>
     </Wrapper>
   );
