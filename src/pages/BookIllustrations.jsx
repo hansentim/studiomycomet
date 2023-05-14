@@ -10,37 +10,68 @@ import Prints from "../components/Prints";
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
+import { useEffect, useState, cloneElement } from "react";
 import styled from "styled-components";
 
-const fadeIn = {
-  hidden: { opacity: 0, scale: 0.6 },
-  visible: { opacity: 1, scale: 1 },
-  transition: { duration: 0.4 },
-};
+const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
+const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
-const FadeInWhenVisible = ({ children }) => {
+const WipeInWhenVisible = ({ children }) => {
   const { ref, inView } = useInView();
+  const [isLoaded, setIsLoaded] = useState(false);
   const animation = useAnimation();
 
   useEffect(() => {
-    if (inView) {
-      animation.start("visible");
+    if (inView && isLoaded) {
+      animation.start({
+        WebkitMaskImage: visibleMask,
+        maskImage: visibleMask,
+      });
     }
-  }, [animation, inView]);
+  }, [animation, inView, isLoaded]);
 
   return (
     <motion.div
       ref={ref}
-      initial='hidden'
+      initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
       animate={animation}
-      variants={fadeIn}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 1, delay: 1 }}
     >
-      {children}
+      {cloneElement(children, {
+        onLoad: () => setIsLoaded(true),
+      })}
     </motion.div>
   );
 };
+
+// const fadeIn = {
+//   hidden: { opacity: 0, scale: 0.6 },
+//   visible: { opacity: 1, scale: 1 },
+//   transition: { duration: 0.4 },
+// };
+
+// const FadeInWhenVisible = ({ children }) => {
+//   const { ref, inView } = useInView();
+//   const animation = useAnimation();
+
+//   useEffect(() => {
+//     if (inView) {
+//       animation.start("visible");
+//     }
+//   }, [animation, inView]);
+
+//   return (
+//     <motion.div
+//       ref={ref}
+//       initial='hidden'
+//       animate={animation}
+//       variants={fadeIn}
+//       transition={{ duration: 0.6 }}
+//     >
+//       {children}
+//     </motion.div>
+//   );
+// };
 
 function BookIllustrations() {
   const navigate = useNavigate();
@@ -65,54 +96,54 @@ function BookIllustrations() {
         </p>
 
         <ImageWrapper>
-          <FadeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={Stjarnskott}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </WipeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={Trappor}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </WipeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={Berg}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </WipeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={Gemenskap}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </WipeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={HandOga}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
-          <FadeInWhenVisible>
+          </WipeInWhenVisible>
+          <WipeInWhenVisible>
             <img
               className='header-images'
               src={HanderMagi}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </FadeInWhenVisible>
+          </WipeInWhenVisible>
         </ImageWrapper>
         <p className='layout-info'>
           Spreads with illustrations from, ”Patterns of Light and Dark”. <br />{" "}
@@ -125,6 +156,7 @@ function BookIllustrations() {
             Linnea Paulsson Neppelberg
           </a>
         </p>
+
         <Prints />
       </InnerWrapper>
     </Wrapper>

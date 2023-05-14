@@ -4,38 +4,13 @@ import Marquee from "react-fast-marquee";
 import ImageBox from ".././components/ImageBox";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect, cloneElement } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
-
-const WipeInWhenVisible = ({ children }) => {
-  const { ref, inView } = useInView();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const animation = useAnimation();
-
-  useEffect(() => {
-    if (inView && isLoaded) {
-      animation.start({
-        WebkitMaskImage: visibleMask,
-        maskImage: visibleMask,
-      });
-    }
-  }, [animation, inView, isLoaded]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
-      animate={animation}
-      transition={{ duration: 0.8, delay: 0.7 }}
-    >
-      {cloneElement(children, {
-        onLoad: () => setIsLoaded(true),
-      })}
-    </motion.div>
-  );
+const fadeIn = {
+  hidden: { opacity: 0, scale: 0.6 },
+  visible: { opacity: 1, scale: 1 },
+  transition: { duration: 0.4 },
 };
 
 function Home() {
@@ -65,7 +40,7 @@ function Home() {
       <PortfolioContainer>
         {portfolioData.map((item, index) => (
           <ItemContainer key={item.id}>
-            <WipeInWhenVisible>
+            <FadeInWhenVisible>
               <StyledImage
                 src={item.image}
                 alt={item.title}
@@ -73,7 +48,7 @@ function Home() {
                 onClick={() => item.route && handleImageClick(item.route)}
                 clickable={!!item.route}
               />
-            </WipeInWhenVisible>
+            </FadeInWhenVisible>
           </ItemContainer>
         ))}
       </PortfolioContainer>
@@ -81,6 +56,29 @@ function Home() {
     </HomeWrapper>
   );
 }
+
+const FadeInWhenVisible = ({ children }) => {
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  useEffect(() => {
+    if (inView) {
+      animation.start("visible");
+    }
+  }, [animation, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial='hidden'
+      animate={animation}
+      variants={fadeIn}
+      transition={{ duration: 0.6 }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const StyledImage = styled.img`
   width: 100%;
