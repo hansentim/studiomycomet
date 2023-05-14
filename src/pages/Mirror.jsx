@@ -44,7 +44,12 @@ function Mirror() {
   const navigate = useNavigate();
   return (
     <Wrapper>
-      <ImageBoxDetails onClick={() => navigate("/home")} />
+      <ImageBoxDetails
+        onClick={() => {
+          window.scrollTo(0, 0);
+          navigate("/home");
+        }}
+      />
       <MirrorContainer>
         <h1>”This is Fine / Is This Fine?”</h1>
         <p>February 2023. Hand sculpted and hand painted frame with mirror.</p>
