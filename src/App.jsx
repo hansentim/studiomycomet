@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import BookIllustrations from "./pages/BookIllustrations";
+import Mirror from "./pages/Mirror";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/book-illustrations' element={<BookIllustrations />} />
+        <Route path='/mirror' element={<Mirror />} />
       </Routes>
       <Footer />
     </div>

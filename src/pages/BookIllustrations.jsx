@@ -35,7 +35,7 @@ const FadeInWhenVisible = ({ children }) => {
       initial='hidden'
       animate={animation}
       variants={fadeIn}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.6 }}
     >
       {children}
     </motion.div>

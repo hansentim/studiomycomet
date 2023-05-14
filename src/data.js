@@ -46,6 +46,7 @@ export const portfolioData = [
   {
     id: 3,
     title: "Project Three",
+    route: "/mirror",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     image: mirror,

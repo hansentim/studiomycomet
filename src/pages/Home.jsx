@@ -73,7 +73,7 @@ const FadeInWhenVisible = ({ children }) => {
       initial='hidden'
       animate={animation}
       variants={fadeIn}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.6 }}
     >
       {children}
     </motion.div>
@@ -88,7 +88,7 @@ const StyledImage = styled.img`
   transition: transform 0.3s ease;
 
   &:hover {
-    transform: ${(props) => (props.clickable ? "scale(1.1)" : "none")};
+    transform: ${(props) => (props.clickable ? "scale(1.2)" : "none")};
   }
 
   @media (max-width: 768px) {

@@ -14,7 +14,7 @@ const Burger = () => {
   return (
     <>
       <BurgerWrapper onClick={() => setIsOpen(!isOpen)}>
-        <VscMenu style={{ fontSize: "1rem" }} />
+        <VscMenu style={{ fontSize: "1.2rem" }} />
       </BurgerWrapper>
       <Menu
         className='burger-menu'
