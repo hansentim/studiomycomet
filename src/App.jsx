@@ -5,6 +5,7 @@ import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import BookIllustrations from "./pages/BookIllustrations";
 import Mirror from "./pages/Mirror";
+import Ignis from "./pages/Ignis";
 import ScrollToTop from "./components/ScroolToTop";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/contact' element={<Contact />} />
         <Route path='/book-illustrations' element={<BookIllustrations />} />
         <Route path='/mirror' element={<Mirror />} />
+        <Route path='/ignis' element={<Ignis />} />
       </Routes>
       <Footer />
     </div>

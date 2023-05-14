@@ -36,6 +36,7 @@ export const portfolioData = [
   {
     id: 2,
     title: "Project Two",
+    route: "/ignis",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     image: orangeCandle,
@@ -198,6 +199,7 @@ export const portfolioData = [
   {
     id: 18,
     title: "Project Four",
+    route: "/ignis",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     image: greenSetdesign,
