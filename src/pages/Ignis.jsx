@@ -20,71 +20,110 @@ function Ignis() {
           navigate("/home");
         }}
       />
-      <Header>
-        <Grid>
-          <img className='logo' src={ignisSvg} alt='logo that reads ignis' />
+      <InnerWrapper>
+        <div className='box-one'>
+          <div className='svg-wrapper'>
+            <img className='logo' src={ignisSvg} alt='logo that reads ignis' />
+          </div>
           <img src={setDesign} alt='setdesign candles' />
+        </div>
+        <div className='box-two'>
           <img src={green} alt='handmade candle' />
-          <img src={orange} alt='orange handmade candle' />
-        </Grid>
-      </Header>
-      <Main>
-        <img src={ignis2023} alt='poster of cowork setdesign and candles' />
-        <img src={moodboard} alt='set design' />
-        <img src={collection} alt='collection of candles setdesign' />
-      </Main>
-      <Details>
-        <h1>"Ignis</h1>
-        <p>
-          ”Ignis is a collaboration between designers Sophie Appelbäck and My
-          Comét. This sculptural design project is crafted with materials that
-          create a controversy in terms of their practical use - where fire is
-          normally involved. Sophie Appelbäck created hand-tied sculptured
-          candleholders out of rope, where every sculpture has their own unique
-          look and size. My Comét made conceptual hand-carved candles, where it
-          takes approximately the same time to carve them, as it does for them
-          to burn out - changing their form in the process. In this
-          collaboration, where candle and candleholder is the natural
-          combination, this match is creating something new, with an ambiguous
-          approach. Where sculpture meets sculpture - creating creatures,
-          inhabiting their given space.” Set design, candles, props,
-          photography, graphic design by My Comét Candleholders by Sophie
-          Appelbäck (länk) February 2023
-        </p>
-      </Details>
+          <img className='orange' src={orange} alt='orange handmade candle' />
+        </div>
+
+        <Main>
+          <img src={ignis2023} alt='poster of cowork setdesign and candles' />
+          <img src={moodboard} alt='set design' />
+          <img src={collection} alt='collection of candles setdesign' />
+        </Main>
+        <Details>
+          <h1>"Ignis</h1>
+          <p>
+            ”Ignis is a collaboration between designers Sophie Appelbäck and My
+            Comét. This sculptural design project is crafted with materials that
+            create a controversy in terms of their practical use - where fire is
+            normally involved. Sophie Appelbäck created hand-tied sculptured
+            candleholders out of rope, where every sculpture has their own
+            unique look and size. My Comét made conceptual hand-carved candles,
+            where it takes approximately the same time to carve them, as it does
+            for them to burn out - changing their form in the process. In this
+            collaboration, where candle and candleholder is the natural
+            combination, this match is creating something new, with an ambiguous
+            approach. Where sculpture meets sculpture - creating creatures,
+            inhabiting their given space.” Set design, candles, props,
+            photography, graphic design by My Comét Candleholders by Sophie
+            Appelbäck (länk) February 2023
+          </p>
+        </Details>
+      </InnerWrapper>
     </Wrapper>
   );
 }
 
+const breakpoints = {
+  mobile: "480px",
+  tablet: "768px",
+  laptop: "1024px",
+  largeScreen: "3024px",
+};
+
 const Wrapper = styled.div`
   padding: 0 3rem;
-  width: 80vw;
-  margin: 0 auto;
 `;
 
-const Header = styled.header`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+const InnerWrapper = styled.div`
+  width: 70vw;
+  justify-content: center;
+  margin: 0 auto;
   background-color: pink;
 
+  .box-one {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    margin-bottom: 5rem;
+
+    .svg-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .box-two {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+    margin-bottom: 5rem;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .orange {
+      width: 66%;
+      height: auto;
+    }
+  }
+`;
+
+const Main = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   img {
-    height: 650px;
-  }
-
-  .logo {
-    width: 70%;
+    width: 100%;
+    height: auto;
   }
 `;
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1rem;
-`;
-
-const Main = styled.div``;
 
 const Details = styled.div``;
 
