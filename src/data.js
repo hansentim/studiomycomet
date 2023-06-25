@@ -69,6 +69,7 @@ export const portfolioData = [
   {
     id: 5,
     title: "Project Four",
+    route: "/ignis",
     about:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.",
     image: setdesignSculptures,

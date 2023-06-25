@@ -39,7 +39,7 @@ const WipeInWhenVisible = ({ children }) => {
       ref={ref}
       initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
       animate={animation}
-      transition={{ duration: 1, delay: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
     >
       {cloneElement(children, {
         onLoad: () => setIsLoaded(true),
