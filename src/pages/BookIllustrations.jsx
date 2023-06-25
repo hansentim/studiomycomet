@@ -13,6 +13,10 @@ import { useInView } from "react-intersection-observer";
 import { useEffect, useState, cloneElement } from "react";
 import styled from "styled-components";
 
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/hind-madurai";
+
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
@@ -189,15 +193,19 @@ const InnerWrapper = styled.div`
   margin: 0 auto;
 
   h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
   }
 
   .subtitle,
   .second-subtitle {
     font-size: 1rem;
+    font-family: "Hind Madurai", sans-serif;
     font-weight: 400;
+    line-height: 1rem;
     margin-bottom: 1rem;
   }
 

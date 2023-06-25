@@ -9,6 +9,10 @@ import mirrorChair from "../assets/mirror/spegel_stol.jpg";
 import mirrorDetails from "../assets/mirror/spegel_details.png";
 import mirrorFrame from "../assets/mirror/spegel_closeup.jpg";
 
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/hind-madurai";
+
 const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
 const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
 
@@ -91,15 +95,20 @@ const MirrorContainer = styled.div`
   padding: 0.5rem 1rem;
 
   h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 0.5rem;
     padding: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
   }
 
   p {
     font-size: 0.8rem;
     margin-bottom: 1rem;
     padding: 0;
+    font-family: "Hind Madurai", sans-serif;
+    font-weight: 400;
+    line-height: 1.5rem;
   }
 
   img {
@@ -113,7 +122,7 @@ const MirrorContainer = styled.div`
     padding: 0.5rem 3rem;
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
 
     p {
@@ -130,7 +139,7 @@ const MirrorContainer = styled.div`
     padding: 0.5rem 6rem;
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
   }
   @media (min-width: ${breakpoints.medium}) {
@@ -138,7 +147,7 @@ const MirrorContainer = styled.div`
     padding: 0.5rem 6rem;
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.5rem;
     }
 
     img {
@@ -150,7 +159,7 @@ const MirrorContainer = styled.div`
     padding: 0.5rem 6rem;
 
     h1 {
-      font-size: 4rem;
+      font-size: 5em;
     }
 
     p {
