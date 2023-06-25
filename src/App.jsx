@@ -7,12 +7,14 @@ import BookIllustrations from "./pages/BookIllustrations";
 import Mirror from "./pages/Mirror";
 import Ignis from "./pages/Ignis";
 import ScrollToTop from "./components/ScroolToTop";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
     <div className='App'>
       <Nav />
       <ScrollToTop />
+      <ScrollToTopButton />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<Contact />} />
