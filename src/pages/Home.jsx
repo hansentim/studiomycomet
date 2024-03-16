@@ -86,10 +86,10 @@ const StyledImage = styled.img`
   height: 55vh;
   object-fit: contain;
   cursor: ${(props) => (props.clickable ? "pointer" : "default")};
-  transition: transform 0.3s ease;
+  transition: opacity 0.3s ease; /* Smooth transition for the opacity change */
 
   &:hover {
-    transform: ${(props) => (props.clickable ? "scale(1.2)" : "none")};
+    opacity: 0.7; /* Fade out the image a bit to make it look dimmer */
   }
 
   @media (max-width: 768px) {
