@@ -23,7 +23,7 @@ const Box = styled.div`
     margin-bottom: 1.5rem;
     margin-top: 2rem;
     img {
-      height: 40px;
+      height: 45px;
     }
   }
 `;

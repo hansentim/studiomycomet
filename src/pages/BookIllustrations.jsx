@@ -10,72 +10,40 @@ import Prints from "../components/Prints";
 
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useEffect, useState, cloneElement } from "react";
+import { useEffect } from "react";
 import styled from "styled-components";
 
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/hind-madurai";
 
-const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
-
 const WipeInWhenVisible = ({ children }) => {
-  const { ref, inView } = useInView();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const animation = useAnimation();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
   useEffect(() => {
-    if (inView && isLoaded) {
-      animation.start({
-        WebkitMaskImage: visibleMask,
-        maskImage: visibleMask,
-      });
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
     }
-  }, [animation, inView, isLoaded]);
+  }, [controls, inView]);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
-      animate={animation}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      initial='hidden'
+      animate={controls}
+      variants={{
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      transition={{ duration: 0.5, delay: 0.2 }} // Adjust duration and delay as needed
     >
-      {cloneElement(children, {
-        onLoad: () => setIsLoaded(true),
-      })}
+      {children}
     </motion.div>
   );
 };
-
-// const fadeIn = {
-//   hidden: { opacity: 0, scale: 0.6 },
-//   visible: { opacity: 1, scale: 1 },
-//   transition: { duration: 0.4 },
-// };
-
-// const FadeInWhenVisible = ({ children }) => {
-//   const { ref, inView } = useInView();
-//   const animation = useAnimation();
-
-//   useEffect(() => {
-//     if (inView) {
-//       animation.start("visible");
-//     }
-//   }, [animation, inView]);
-
-//   return (
-//     <motion.div
-//       ref={ref}
-//       initial='hidden'
-//       animate={animation}
-//       variants={fadeIn}
-//       transition={{ duration: 0.6 }}
-//     >
-//       {children}
-//     </motion.div>
-//   );
-// };
 
 function BookIllustrations() {
   const navigate = useNavigate();

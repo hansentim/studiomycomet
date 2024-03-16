@@ -13,8 +13,8 @@ import framsida from "../assets/book/book_framsida.jpg";
 import colophon from "../assets/book/book_colophon.jpg";
 
 const fadeIn = {
-  hidden: { opacity: 0, scale: 0.5 },
-  visible: { opacity: 1, scale: 1 },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 },
   transition: { duration: 0.6 },
 };
 
@@ -25,6 +25,8 @@ const FadeInWhenVisible = ({ children }) => {
   useEffect(() => {
     if (inView) {
       animation.start("visible");
+    } else {
+      animation.start("hidden");
     }
   }, [animation, inView]);
 
@@ -34,7 +36,7 @@ const FadeInWhenVisible = ({ children }) => {
       initial='hidden'
       animate={animation}
       variants={fadeIn}
-      transition={{ duration: 1 }}
+      transition={{ duration: 0.6 }} // You can adjust the duration as needed
     >
       {children}
     </motion.div>

@@ -1,15 +1,25 @@
 import styled from "styled-components";
 import ImageBox from "../components/ImageBox";
+import { motion } from "framer-motion";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const Contact = () => {
   return (
     <>
       <Container>
         <ImageBox />
-        <header>
+        <motion.header
+          initial={{ y: "-100vh" }}
+          animate={{ y: 0 }}
+          transition={{
+            type: "spring",
+            stiffness: 70,
+            damping: 10,
+          }}
+        >
           <p style={{ marginBottom: "2rem" }}>More Info coming soon...</p>
           <p className='mail'>
-            Contact me at:
+            Mail me at:
             <a
               style={{
                 color: "#333",
@@ -22,7 +32,25 @@ const Contact = () => {
               Studio My Comét
             </a>
           </p>
-        </header>
+          {/* Social Media Links */}
+          <div style={{ marginTop: "20px" }}>
+            {" "}
+            <SocialLink
+              href='https://www.instagram.com/studiomycomet/?igshid=YmMyMTA2M2Y%3D'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaInstagram style={{ color: "#333" }} />
+            </SocialLink>
+            <SocialLink
+              href='https://www.linkedin.com/in/my-com%C3%A9t-520112242/?originalSubdomain=se'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <FaLinkedin style={{ color: "#333" }} />
+            </SocialLink>
+          </div>
+        </motion.header>
       </Container>
     </>
   );
@@ -59,6 +87,22 @@ const Container = styled.div`
     padding: 1rem;
     p {
       font-size: 1rem;
+    }
+  }
+`;
+
+const SocialLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+
+  svg {
+    color: #333;
+    font-size: 2.5rem; /* Default size */
+
+    @media (max-width: 768px) {
+      font-size: 2rem; /* Smaller size for screens less than 768px wide */
     }
   }
 `;

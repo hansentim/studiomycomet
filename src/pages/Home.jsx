@@ -4,36 +4,33 @@ import Marquee from "react-fast-marquee";
 import ImageBox from ".././components/ImageBox";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useState, useEffect, cloneElement } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
-const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
-
 const WipeInWhenVisible = ({ children }) => {
-  const { ref, inView } = useInView();
-  const [isLoaded, setIsLoaded] = useState(false);
-  const animation = useAnimation();
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
 
   useEffect(() => {
-    if (inView && isLoaded) {
-      animation.start({
-        WebkitMaskImage: visibleMask,
-        maskImage: visibleMask,
-      });
+    if (inView) {
+      controls.start("visible");
+    } else {
+      controls.start("hidden");
     }
-  }, [animation, inView, isLoaded]);
+  }, [controls, inView]);
 
   return (
     <motion.div
       ref={ref}
-      initial={{ WebkitMaskImage: hiddenMask, maskImage: hiddenMask }}
-      animate={animation}
-      transition={{ duration: 0.8, delay: 0.7 }}
+      initial='hidden'
+      animate={controls}
+      variants={{
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+      transition={{ duration: 0.8, delay: 0 }}
     >
-      {cloneElement(children, {
-        onLoad: () => setIsLoaded(true),
-      })}
+      {children}
     </motion.div>
   );
 };
