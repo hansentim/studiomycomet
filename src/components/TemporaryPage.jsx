@@ -9,7 +9,7 @@ const TemporaryPage = () => {
         <img src={headerImg} alt='header image' />
       </ImageBox>
       <TextBox>
-        <h2>This site is under construction. Please check back later...</h2>
+        <h2>More projects and info will be added soon...</h2>
       </TextBox>
       <IconContainer>
         <p>In the meantime, you can find me on social media:</p>

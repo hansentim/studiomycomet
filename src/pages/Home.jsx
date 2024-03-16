@@ -49,14 +49,16 @@ function Home() {
         style={{ marginBottom: "2.5rem" }}
         pauseOnHover={true}
         gradient={false}
-        speed={50}
+        speed={100}
       >
         <p style={{ fontSize: "1rem" }}>
           {" "}
-          This site is under construction. More info about the projects will be
-          added soon... In the meantime, you can find me on social media or send
-          me an email at{" "}
-          <span style={{ fontWeight: "600" }}>studiomycomet@gmail.com</span> -
+          More projects and info will be added soon... In the meantime, you can
+          find me on social media (studiocomet on Instagram) or send me an email
+          at <span style={{ fontWeight: "600" }}>
+            studiomycomet@gmail.com
+          </span>{" "}
+          -
         </p>
       </Marquee>
       <PortfolioContainer>
