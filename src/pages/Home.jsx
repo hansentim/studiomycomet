@@ -88,9 +88,14 @@ const StyledImage = styled.img`
   cursor: ${(props) => (props.clickable ? "pointer" : "default")};
   transition: opacity 0.3s ease; /* Smooth transition for the opacity change */
 
-  &:hover {
-    opacity: 0.7; /* Fade out the image a bit to make it look dimmer */
-  }
+  /* Apply hover effect only if the image is clickable */
+  ${(props) =>
+    props.clickable &&
+    `
+    &:hover {
+      opacity: 0.7; /* Fade out the image a bit to make it look dimmer */
+    }
+  `}
 
   @media (max-width: 768px) {
     height: 60vh;
