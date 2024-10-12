@@ -1,0 +1,243 @@
+import styled from 'styled-components';
+import ImageBox from '../components/ImageBox';
+
+const CV = () => {
+  return (
+    <CVContainer>
+      <ImageBox />
+
+      <Section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            2020-2022: Master of Arts and Design, Spatial Design - Royal Danish
+            Academy (KADK)
+          </li>
+          <li>
+            2018: Guest scenographer student project, one semester - The Danish
+            Film School
+          </li>
+          <li>
+            2015-2018: Bachelor of Arts and Design, Spatial Design - Royal
+            Danish Academy (KADK)
+          </li>
+          <li>2009: Intermediala studier 30 ects - Lund University</li>
+          <li>2008: Filmvetenskap 30 ects - Lund University</li>
+          <li>2006-2007: Fotoskolan i Gamleby - Conceptual photography</li>
+          <li>2005-2006: Öland Documentary film school</li>
+        </ul>
+      </Section>
+
+      <Section>
+        <h2>Work</h2>
+        <h3>Present</h3>
+        <ul>
+          <li>
+            2023-Present: Independent business owner (VAT approved and
+            f-skattsedel)
+          </li>
+          <li>
+            Spatial Designer, interior architect, furniture design, applied art,
+            illustrator, curator
+          </li>
+        </ul>
+        <h3>Previous (relevant)</h3>
+        <ul>
+          <li>2010-2023: Weekday</li>
+          <ul>
+            <li>2010-2015: Visual Merchandiser</li>
+            <li>2015-2023: Extra during leave of absence for studies</li>
+          </ul>
+        </ul>
+      </Section>
+
+      <Section>
+        <h2>Galleries</h2>
+        <ul>
+          <li>Adorno (coming)</li>
+        </ul>
+      </Section>
+
+      <Section>
+        <h2>Commissioned/Exhibitions</h2>
+        <h3>2024</h3>
+        <ul>
+          <li>Adorno - coming fall/winter 2024</li>
+          <li>Bespoke furniture for Meadow (ongoing)</li>
+          <li>
+            3 Days of Design - group exhibition curated by House of Nordic
+            Design
+          </li>
+          <li>
+            SSDD - Väntrum (the Waiting room), group exhibition- co-curator,
+            spatial designer, exhibitor
+          </li>
+          <li>
+            Illustrations for the book *Waves of the Blue Sea*, published by
+            Media Evolution
+          </li>
+          <li>Bathroom design, private customer</li>
+        </ul>
+        <h3>2023</h3>
+        <ul>
+          <li>
+            Spatial design, new spatial profile, bespoke furniture, tile mural,
+            and interior architecture for Meadow, Malmö
+          </li>
+          <li>SSDD, group exhibition at BISe</li>
+          <li>Illustration for Purple Ivy</li>
+          <li>
+            Illustrations for the book *Patterns of Light and Dark*, published
+            by Media Evolution
+          </li>
+        </ul>
+      </Section>
+
+      <Section>
+        <h2>Media</h2>
+        <ul>
+          <li>
+            Dezeen, article about the NoDe group exhibition during 3 Days of
+            Design - pictures of my furniture:
+            <a
+              href='https://www.dezeen.com/2024/06/17/house-of-nordic-design-node-exhibition/'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Read more
+            </a>
+          </li>
+          <li>
+            Sight Unseen, article mentioning Väntrum:
+            <a
+              href='https://www.sightunseen.com/2024/07/week-of-july-8-2024/?fbclid=PAZXh0bgNhZW0CMTEAAabm9lRq00FF8lW8ctzolP32meSJfAof6M_EgnzuZzNuSDlF9STH66N1wBY_aem_eHwph_36UyTXAQBvXe8TFw'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Read more
+            </a>
+          </li>
+          <li>
+            Disegno, article mentioning Väntrum:
+            <a
+              href='https://disegnojournal.com/newsfeed/southern-sweden-design-days-2024?fbclid=PAZXh0bgNhZW0CMTEAAaYmZXpMSZ3aq8Zd6hpuhl3JXXGcLLbJ0cs1A0gREFzcZDKv81q17K0Df5E_aem_lrZ8GQi2yxt9CsnIVqlggQ'
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              Read more
+            </a>
+          </li>
+        </ul>
+      </Section>
+      <DownloadLink>
+        <a href='/cv.pdf' download='MyComet_CV_October24.pdf'>
+          Download CV (PDF)
+        </a>
+      </DownloadLink>
+    </CVContainer>
+  );
+};
+
+const CVContainer = styled.div`
+  width: 90vw;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+`;
+
+const Section = styled.section`
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+
+    @media (max-width: 768px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    font-size: 1.2rem;
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  ul ul {
+    padding-left: 1.5rem;
+    font-size: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const DownloadLink = styled.div`
+  text-align: center;
+  margin: 4rem 0;
+
+  a {
+    font-size: 1.5rem;
+    color: white;
+    background-color: #333;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #555;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.2rem;
+      padding: 0.8rem 1.5rem;
+    }
+  }
+`;
+
+export default CV;

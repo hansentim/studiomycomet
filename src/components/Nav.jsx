@@ -1,21 +1,21 @@
-import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
-import styled from "styled-components";
-import Burger from "./Burger";
+import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import Burger from './Burger';
 
 const Nav = () => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   const activeStyles = {
-    fontSize: "1.5em",
+    fontSize: '1.5em',
   };
 
   return (
@@ -27,6 +27,7 @@ const Nav = () => {
           <div className='box'>
             <NavList>
               <NavLinkStyled to='/contact'>About / Contact</NavLinkStyled>
+              <NavLinkStyled to='/cv'>CV</NavLinkStyled>
             </NavList>
           </div>
         </NavContainer>
