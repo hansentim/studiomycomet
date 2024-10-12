@@ -21,12 +21,6 @@ function BookIllustrations() {
 
   return (
     <Wrapper>
-      <ImageBoxDetails
-        onClick={() => {
-          window.scrollTo(0, 0);
-          navigate('/home');
-        }}
-      />
       <InnerWrapper>
         <h1>
           Illustrations for the book <br /> ”Patterns of Light and Dark”

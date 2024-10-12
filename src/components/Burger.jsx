@@ -1,25 +1,25 @@
-import { Menu, SubMenu, Item } from "burger-menu";
-import "burger-menu/lib/index.css";
-import React, { useState } from "react";
-import { VscMenu } from "react-icons/vsc";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { Menu } from 'burger-menu';
+import 'burger-menu/lib/index.css';
+import React, { useState } from 'react';
+import { VscMenu } from 'react-icons/vsc';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
   let activeStyle = {
-    textDecoration: "underline",
+    textDecoration: 'underline',
   };
 
   return (
     <>
       <BurgerWrapper onClick={() => setIsOpen(!isOpen)}>
-        <VscMenu style={{ fontSize: "1.2rem" }} />
+        <VscMenu style={{ fontSize: '1.2rem' }} />
       </BurgerWrapper>
       <Menu
         className='burger-menu'
         isOpen={isOpen}
-        selectedKey={"entry"}
+        selectedKey={'entry'}
         onClose={() => setIsOpen(false)}
       >
         <Container className='container'>
@@ -33,27 +33,43 @@ const Burger = () => {
                     isActive
                       ? activeStyle
                       : {
-                          textDecoration: "none",
+                          textDecoration: 'none',
                         }
                   }
                 >
                   Home
                 </NavLink>
               </li>
-
               <li>
                 <NavLink
-                  to='contact'
+                  to='/contact'
                   onClick={() => setIsOpen(false)}
                   style={({ isActive }) =>
                     isActive
                       ? activeStyle
                       : {
-                          textDecoration: "none",
+                          textDecoration: 'none',
                         }
                   }
                 >
                   About / Contact
+                </NavLink>
+              </li>
+
+              {/* Add the CV page link here */}
+              <li>
+                <NavLink
+                  to='/cv'
+                  onClick={() => setIsOpen(false)}
+                  style={({ isActive }) =>
+                    isActive
+                      ? activeStyle
+                      : {
+                          textDecoration: 'none',
+                        }
+                  }
+                >
+                  CV
                 </NavLink>
               </li>
             </ul>

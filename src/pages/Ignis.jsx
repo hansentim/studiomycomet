@@ -16,12 +16,6 @@ function Ignis() {
   const navigate = useNavigate();
   return (
     <Wrapper>
-      <ImageBoxDetails
-        onClick={() => {
-          window.scrollTo(0, 0);
-          navigate('/home');
-        }}
-      />
       <InnerWrapper>
         <div className='box-one'>
           <div className='svg-wrapper'>

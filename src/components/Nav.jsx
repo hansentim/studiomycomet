@@ -24,33 +24,48 @@ const Nav = () => {
         <Burger />
       ) : (
         <NavContainer>
-          <div className='box'>
+          <NavWrapper>
+            {/* My Comét home button on the left side */}
+            <NavLinkHome to='/'>My Comét</NavLinkHome>
+            {/* Other links on the right side */}
             <NavList>
               <NavLinkStyled to='/cv'>CV</NavLinkStyled>
               <NavLinkStyled to='/contact'>About / Contact</NavLinkStyled>
             </NavList>
-          </div>
+          </NavWrapper>
         </NavContainer>
       )}
     </>
   );
 };
 
+// Styled Components for Nav
 const NavContainer = styled.nav`
   width: 100vw;
   height: 6vh;
-
   padding: 1rem 5rem 0 0;
+  margin-bottom: 2rem; /* Adds space below the navigation */
+`;
 
-  .box {
-    height: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
+const NavWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+`;
+
+const NavLinkHome = styled(NavLink)`
+  color: #757575;
+  font-size: 1.2rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin-left: 1rem; /* Adds the same left space as the other buttons' right space */
 `;
 
 const NavList = styled.ul`
   list-style: none;
+  display: flex;
+  align-items: center;
 `;
 
 const NavLinkStyled = styled(NavLink)`
@@ -58,7 +73,7 @@ const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   border: 1px solid transparent;
   padding: 0.5rem;
-  margin-left: 1rem;
+  margin-left: 1rem; /* Ensures equal spacing between the buttons */
   border-radius: 5px;
   transition: border 0.2s ease-in-out;
 

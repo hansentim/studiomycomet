@@ -4,8 +4,6 @@ import ImageBox from '../components/ImageBox';
 const CV = () => {
   return (
     <CVContainer>
-      <ImageBox />
-
       {/* 1. Work (Present) */}
       <Section>
         <h2>Work</h2>
