@@ -1,48 +1,16 @@
-import ignisSvg from "../assets/ignis/IGNIS.svg";
-import setDesign from "../assets/ignis/setdesignskulpturer_mindre.png";
-import green from "../assets/ignis/green_set_small.png";
-import orange from "../assets/ignis/frilagt_orange_ljus.png";
-import ignis2023 from "../assets/ignis/Ignis2023_mindre.png";
-import moodboard from "../assets/ignis/moodboard_emo2_frilagd_liten.png";
-import collection from "../assets/ignis/frilagda_ljus.png";
-import { useNavigate } from "react-router-dom";
-import ImageBoxDetails from "../components/ImageBoxDetails";
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/hind-madurai";
-
-import styled from "styled-components";
-
-const WipeInWhenVisible = ({ children }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial='hidden'
-      animate={controls}
-      variants={{
-        visible: { opacity: 1 },
-        hidden: { opacity: 0 },
-      }}
-      transition={{ duration: 0.5, delay: 0.2 }} // Adjust duration and delay as needed
-    >
-      {children}
-    </motion.div>
-  );
-};
+import ignisSvg from '../assets/ignis/IGNIS.svg';
+import setDesign from '../assets/ignis/setdesignskulpturer_mindre.png';
+import green from '../assets/ignis/green_set_small.png';
+import orange from '../assets/ignis/frilagt_orange_ljus.png';
+import ignis2023 from '../assets/ignis/Ignis2023_mindre.png';
+import moodboard from '../assets/ignis/moodboard_emo2_frilagd_liten.png';
+import collection from '../assets/ignis/frilagda_ljus.png';
+import { useNavigate } from 'react-router-dom';
+import ImageBoxDetails from '../components/ImageBoxDetails';
+import styled from 'styled-components';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/hind-madurai';
 
 function Ignis() {
   const navigate = useNavigate();
@@ -51,7 +19,7 @@ function Ignis() {
       <ImageBoxDetails
         onClick={() => {
           window.scrollTo(0, 0);
-          navigate("/home");
+          navigate('/home');
         }}
       />
       <InnerWrapper>
@@ -59,23 +27,19 @@ function Ignis() {
           <div className='svg-wrapper'>
             <img className='logo' src={ignisSvg} alt='logo that reads ignis' />
           </div>
-          <WipeInWhenVisible>
+          <div>
             <img src={setDesign} alt='setdesign candles' />
-          </WipeInWhenVisible>
-        </div>
-        <WipeInWhenVisible>
-          <div className='box-two'>
-            <img src={green} alt='handmade candle' />
-            <img className='orange' src={orange} alt='orange handmade candle' />
           </div>
-        </WipeInWhenVisible>
-        <WipeInWhenVisible>
-          <Main>
-            <img src={ignis2023} alt='poster of cowork setdesign and candles' />
-            <img src={moodboard} alt='set design' />
-            <img src={collection} alt='collection of candles setdesign' />
-          </Main>
-        </WipeInWhenVisible>
+        </div>
+        <div className='box-two'>
+          <img src={green} alt='handmade candle' />
+          <img className='orange' src={orange} alt='orange handmade candle' />
+        </div>
+        <Main>
+          <img src={ignis2023} alt='poster of cowork setdesign and candles' />
+          <img src={moodboard} alt='set design' />
+          <img src={collection} alt='collection of candles setdesign' />
+        </Main>
         <Details>
           <h1>"Ignis"</h1>
           <p>
@@ -91,16 +55,16 @@ function Ignis() {
             combination, this match is creating something new, with an ambiguous
             approach. Where sculpture meets sculpture - creating creatures,
             inhabiting their given space.” Set design, candles, props,
-            photography, graphic design by My Comét. Candleholders by{" "}
+            photography, graphic design by My Comét. Candleholders by{' '}
             <a
               href='https://www.sophieappelback.com/'
               target='_blank'
               rel='noopener noreferrer'
             >
-              {" "}
-              Sophie Appelbäck{" "}
-            </a>{" "}
-            <br /> February 2023{" "}
+              {' '}
+              Sophie Appelbäck{' '}
+            </a>{' '}
+            <br /> February 2023{' '}
           </p>
         </Details>
       </InnerWrapper>
@@ -109,10 +73,10 @@ function Ignis() {
 }
 
 const breakpoints = {
-  mobile: "480px",
-  tablet: "768px",
-  laptop: "1024px",
-  largeScreen: "3024px",
+  mobile: '480px',
+  tablet: '768px',
+  laptop: '1024px',
+  largeScreen: '3024px',
 };
 
 const Wrapper = styled.div`
@@ -200,13 +164,13 @@ const Main = styled.div`
 const Details = styled.div`
   h1 {
     font-size: 2.5rem;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     margin: 2rem 0;
   }
   p {
     font-size: 1.2rem;
-    font-family: "Hind Madurai", sans-serif;
+    font-family: 'Hind Madurai', sans-serif;
     font-weight: 400;
     line-height: 1.5rem;
     margin-bottom: 5rem;

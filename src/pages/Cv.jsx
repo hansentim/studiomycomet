@@ -168,19 +168,21 @@ const Section = styled.section`
   margin-bottom: 2rem;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.6rem;
     margin-bottom: 1rem;
     color: #333;
+    font-weight: 600;
 
     @media (max-width: 768px) {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 
   h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
     margin-bottom: 0.5rem;
+    font-weight: 500;
 
     @media (max-width: 768px) {
       font-size: 1.2rem;
@@ -190,24 +192,26 @@ const Section = styled.section`
   ul {
     list-style-type: none;
     padding-left: 0;
-    font-size: 1.2rem;
-
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
-  }
-
-  ul ul {
-    padding-left: 1.5rem;
     font-size: 1rem;
+    line-height: 1.6;
 
     @media (max-width: 768px) {
       font-size: 0.9rem;
     }
   }
 
+  ul ul {
+    padding-left: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+
+    @media (max-width: 768px) {
+      font-size: 0.85rem;
+    }
+  }
+
   li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   a {
@@ -216,6 +220,7 @@ const Section = styled.section`
 
     &:hover {
       text-decoration: underline;
+      color: #0056b3;
     }
   }
 `;

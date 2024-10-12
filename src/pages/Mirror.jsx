@@ -1,45 +1,14 @@
-import styled from "styled-components";
-import ImageBoxDetails from "../components/ImageBoxDetails";
-import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import styled from 'styled-components';
+import ImageBoxDetails from '../components/ImageBoxDetails';
+import { useNavigate } from 'react-router-dom';
 
-import mirrorChair from "../assets/mirror/spegel_stol.jpg";
-import mirrorDetails from "../assets/mirror/spegel_details.png";
-import mirrorFrame from "../assets/mirror/spegel_closeup.jpg";
+import mirrorChair from '../assets/mirror/spegel_stol.jpg';
+import mirrorDetails from '../assets/mirror/spegel_details.png';
+import mirrorFrame from '../assets/mirror/spegel_closeup.jpg';
 
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/hind-madurai";
-
-const WipeInWhenVisible = ({ children }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial='hidden'
-      animate={controls}
-      variants={{
-        visible: { opacity: 1 },
-        hidden: { opacity: 0 },
-      }}
-      transition={{ duration: 0.5, delay: 0.2 }} // Adjust duration and delay as needed
-    >
-      {children}
-    </motion.div>
-  );
-};
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/hind-madurai';
 
 function Mirror() {
   const navigate = useNavigate();
@@ -48,33 +17,33 @@ function Mirror() {
       <ImageBoxDetails
         onClick={() => {
           window.scrollTo(0, 0);
-          navigate("/home");
+          navigate('/home');
         }}
       />
       <MirrorContainer>
         <h1>”This is Fine / Is This Fine?”</h1>
         <p>February 2023. Hand sculpted and hand painted frame with mirror.</p>
         <p>March 2023</p>
-        <WipeInWhenVisible>
+        <div>
           <img src={mirrorChair} alt='designed mirror on chair' />
-        </WipeInWhenVisible>
-        <WipeInWhenVisible>
-          <img src={mirrorDetails} alt='handpainet mirror' />
-        </WipeInWhenVisible>
-        <WipeInWhenVisible>
+        </div>
+        <div>
+          <img src={mirrorDetails} alt='handpainted mirror' />
+        </div>
+        <div>
           <img src={mirrorFrame} alt='hand sculpted mirror frame' />
-        </WipeInWhenVisible>
+        </div>
       </MirrorContainer>
     </Wrapper>
   );
 }
 
 const breakpoints = {
-  mobile: "480px",
-  tablet: "768px",
-  laptop: "1024px",
-  medium: "1920px",
-  largeScreen: "3024px",
+  mobile: '480px',
+  tablet: '768px',
+  laptop: '1024px',
+  medium: '1920px',
+  largeScreen: '3024px',
 };
 
 const Wrapper = styled.div`
@@ -95,7 +64,7 @@ const MirrorContainer = styled.div`
     font-size: 1.3rem;
     margin-bottom: 0.5rem;
     padding: 0;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
 
@@ -103,7 +72,7 @@ const MirrorContainer = styled.div`
     font-size: 0.8rem;
     margin-bottom: 1rem;
     padding: 0;
-    font-family: "Hind Madurai", sans-serif;
+    font-family: 'Hind Madurai', sans-serif;
     font-weight: 400;
     line-height: 1.5rem;
   }

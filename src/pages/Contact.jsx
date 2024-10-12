@@ -1,31 +1,22 @@
-import styled from "styled-components";
-import ImageBox from "../components/ImageBox";
-import { motion } from "framer-motion";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import styled from 'styled-components';
+import ImageBox from '../components/ImageBox';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <>
       <Container>
         <ImageBox />
-        <motion.header
-          initial={{ y: "-100vh" }}
-          animate={{ y: 0 }}
-          transition={{
-            type: "spring",
-            stiffness: 70,
-            damping: 10,
-          }}
-        >
-          <p style={{ marginBottom: "2rem" }}>More Info coming soon...</p>
+        <header>
+          <p style={{ marginBottom: '2rem' }}>More Info coming soon...</p>
           <p className='mail'>
             Mail me at:
             <a
               style={{
-                color: "#333",
-                textDecoration: "none",
-                fontWeight: "bold",
-                paddingLeft: "5px",
+                color: '#333',
+                textDecoration: 'none',
+                fontWeight: 'bold',
+                paddingLeft: '5px',
               }}
               href='mailto:studiomycomet@gmail.com'
             >
@@ -33,24 +24,23 @@ const Contact = () => {
             </a>
           </p>
           {/* Social Media Links */}
-          <div style={{ marginTop: "20px" }}>
-            {" "}
+          <div style={{ marginTop: '20px' }}>
             <SocialLink
               href='https://www.instagram.com/studiomycomet/?igshid=YmMyMTA2M2Y%3D'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <FaInstagram style={{ color: "#333" }} />
+              <FaInstagram style={{ color: '#333' }} />
             </SocialLink>
             <SocialLink
               href='https://www.linkedin.com/in/my-com%C3%A9t-520112242/?originalSubdomain=se'
               target='_blank'
               rel='noopener noreferrer'
             >
-              <FaLinkedin style={{ color: "#333" }} />
+              <FaLinkedin style={{ color: '#333' }} />
             </SocialLink>
           </div>
-        </motion.header>
+        </header>
       </Container>
     </>
   );

@@ -1,49 +1,16 @@
-import Stjarnskott from "../assets/book/Print_A_stjarnskott_LITEN.jpg";
-import Trappor from "../assets/book/PrintA_trappor_LITEN.jpg";
-import Berg from "../assets/book/Berg.jpg";
-import Gemenskap from "../assets/book/Gemenskap.jpg";
-import HandOga from "../assets/book/HandOga.jpg";
-import HanderMagi from "../assets/book/HanderMagi.jpg";
-import ImageBoxDetails from "../components/ImageBoxDetails";
-import { useNavigate } from "react-router-dom";
-import Prints from "../components/Prints";
-
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { useEffect } from "react";
-import styled from "styled-components";
-
-import "@fontsource/roboto/400.css";
-import "@fontsource/roboto/500.css";
-import "@fontsource/hind-madurai";
-
-const WipeInWhenVisible = ({ children }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-      ref={ref}
-      initial='hidden'
-      animate={controls}
-      variants={{
-        visible: { opacity: 1 },
-        hidden: { opacity: 0 },
-      }}
-      transition={{ duration: 0.5, delay: 0.2 }} // Adjust duration and delay as needed
-    >
-      {children}
-    </motion.div>
-  );
-};
+import Stjarnskott from '../assets/book/Print_A_stjarnskott_LITEN.jpg';
+import Trappor from '../assets/book/PrintA_trappor_LITEN.jpg';
+import Berg from '../assets/book/Berg.jpg';
+import Gemenskap from '../assets/book/Gemenskap.jpg';
+import HandOga from '../assets/book/HandOga.jpg';
+import HanderMagi from '../assets/book/HanderMagi.jpg';
+import ImageBoxDetails from '../components/ImageBoxDetails';
+import { useNavigate } from 'react-router-dom';
+import Prints from '../components/Prints';
+import styled from 'styled-components';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/hind-madurai';
 
 function BookIllustrations() {
   const navigate = useNavigate();
@@ -57,7 +24,7 @@ function BookIllustrations() {
       <ImageBoxDetails
         onClick={() => {
           window.scrollTo(0, 0);
-          navigate("/home");
+          navigate('/home');
         }}
       />
       <InnerWrapper>
@@ -65,65 +32,65 @@ function BookIllustrations() {
           Illustrations for the book <br /> ”Patterns of Light and Dark”
         </h1>
         <p className='subtitle'>
-          Commisioned work to create six illustrations, one for each chapter,
+          Commissioned work to create six illustrations, one for each chapter,
           for the book ”Patterns of Light and Dark”.
         </p>
         <p className='second-subtitle'>
-          Costumer: Media Evolution, Malmö March 2023
+          Customer: Media Evolution, Malmö March 2023
         </p>
 
         <ImageWrapper>
-          <WipeInWhenVisible>
+          <div>
             <img
               className='header-images'
               src={Stjarnskott}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
-          <WipeInWhenVisible>
+          </div>
+          <div>
             <img
               className='header-images'
               src={Trappor}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
-          <WipeInWhenVisible>
+          </div>
+          <div>
             <img
               className='header-images'
               src={Berg}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
-          <WipeInWhenVisible>
+          </div>
+          <div>
             <img
               className='header-images'
               src={Gemenskap}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
-          <WipeInWhenVisible>
+          </div>
+          <div>
             <img
               className='header-images'
               src={HandOga}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
-          <WipeInWhenVisible>
+          </div>
+          <div>
             <img
               className='header-images'
               src={HanderMagi}
               alt='illustration-star'
               onContextMenu={handleContextMenu}
             />
-          </WipeInWhenVisible>
+          </div>
         </ImageWrapper>
         <p className='layout-info'>
-          Spreads with illustrations from, ”Patterns of Light and Dark”. <br />{" "}
+          Spreads with illustrations from, ”Patterns of Light and Dark”. <br />{' '}
           Layout:
           <a
             href='https://linneapaulsson.se/'
@@ -141,10 +108,10 @@ function BookIllustrations() {
 }
 
 const breakpoints = {
-  mobile: "480px",
-  tablet: "768px",
-  laptop: "1024px",
-  largeScreen: "3024px",
+  mobile: '480px',
+  tablet: '768px',
+  laptop: '1024px',
+  largeScreen: '3024px',
 };
 
 const Wrapper = styled.div`
@@ -164,14 +131,14 @@ const InnerWrapper = styled.div`
     font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 1rem;
-    font-family: "Roboto", sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
   }
 
   .subtitle,
   .second-subtitle {
     font-size: 1rem;
-    font-family: "Hind Madurai", sans-serif;
+    font-family: 'Hind Madurai', sans-serif;
     font-weight: 400;
     line-height: 1rem;
     margin-bottom: 1rem;
