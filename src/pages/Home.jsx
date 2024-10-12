@@ -88,37 +88,46 @@ const ModalOverlay = styled.div`
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: hidden; /* Prevents scrollbars on the background */
+  overflow: hidden;
 `;
 
 const ModalContent = styled.div`
   background: white;
   padding: 20px;
   position: relative;
-  max-width: 85vw; /* Modal should not exceed 85% of the viewport width */
-  max-height: 85vh; /* Modal should not exceed 85% of the viewport height */
+  max-width: 85vw;
+  max-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
 
   img {
     max-width: 100%;
-    max-height: 80vh; /* Set a max-height for the image relative to the viewport height */
-    object-fit: contain; /* Ensure the image scales while maintaining its aspect ratio */
+    max-height: 80vh;
+    object-fit: contain;
   }
 `;
 
-// Position the CloseButton relative to the modal background, not on the image
 const CloseButton = styled.span`
   position: absolute;
-  top: -10px; /* Move it upwards by 10px to negate the padding */
-  right: 1px; /* Move it rightwards by 10px to negate the padding */
+  top: -10px;
+  right: 1px;
   font-size: 2rem;
   cursor: pointer;
   color: #333;
 `;
 
-// Styled Components for the Home Page
+const HomeWrapper = styled.div`
+  width: 90vw;
+  justify-content: center;
+  margin: 0 auto;
+
+  @media (max-width: 768px) {
+    width: 100vw;
+    padding: 6rem 1rem 1rem; /* Add padding to the top to make space for the burger menu */
+  }
+`;
+
 const StyledImage = styled.img`
   width: 100%;
   height: 55vh;
@@ -136,16 +145,6 @@ const StyledImage = styled.img`
 
   @media (max-width: 768px) {
     height: 60vh;
-  }
-`;
-
-const HomeWrapper = styled.div`
-  width: 90vw;
-  justify-content: center;
-  margin: 0 auto;
-  @media (max-width: 768px) {
-    width: 100vw;
-    padding: 1rem;
   }
 `;
 

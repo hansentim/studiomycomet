@@ -80,7 +80,7 @@ const Wrapper = styled.div`
   }
 
   @media (max-width: ${breakpoints.tablet}) {
-    padding: 0 1rem;
+    padding: 6rem 1rem 1rem;
   }
 `;
 

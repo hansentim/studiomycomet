@@ -43,6 +43,10 @@ const breakpoints = {
 const Wrapper = styled.div`
   padding: 0 1rem;
 
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 6rem 1rem 1rem;
+  }
+
   @media (min-width: ${breakpoints.tablet}) {
     padding: 0 3rem;
   }

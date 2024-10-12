@@ -7,70 +7,45 @@ import styled from 'styled-components';
 
 const Burger = () => {
   const [isOpen, setIsOpen] = useState(false);
-  let activeStyle = {
-    textDecoration: 'underline',
-  };
 
   return (
     <>
-      <BurgerWrapper onClick={() => setIsOpen(!isOpen)}>
-        <VscMenu style={{ fontSize: '1.2rem' }} />
-      </BurgerWrapper>
+      <NavWrapper>
+        {/* My Comét on the left side */}
+        {!isOpen && <CometLabel>My Comét</CometLabel>}
+
+        {/* Burger menu icon on the right side */}
+        <BurgerWrapper>
+          <VscMenu
+            style={{ fontSize: '1.5rem', cursor: 'pointer' }}
+            onClick={() => setIsOpen(!isOpen)}
+          />
+        </BurgerWrapper>
+      </NavWrapper>
+
       <Menu
         className='burger-menu'
         isOpen={isOpen}
         selectedKey={'entry'}
         onClose={() => setIsOpen(false)}
       >
-        <Container className='container'>
+        <Container>
           <StyledNav>
             <ul>
               <li>
-                <NavLink
-                  to='/'
-                  onClick={() => setIsOpen(false)}
-                  style={({ isActive }) =>
-                    isActive
-                      ? activeStyle
-                      : {
-                          textDecoration: 'none',
-                        }
-                  }
-                >
+                <NavLinkStyled to='/' onClick={() => setIsOpen(false)}>
                   Home
-                </NavLink>
+                </NavLinkStyled>
               </li>
               <li>
-                <NavLink
-                  to='/contact'
-                  onClick={() => setIsOpen(false)}
-                  style={({ isActive }) =>
-                    isActive
-                      ? activeStyle
-                      : {
-                          textDecoration: 'none',
-                        }
-                  }
-                >
+                <NavLinkStyled to='/contact' onClick={() => setIsOpen(false)}>
                   About / Contact
-                </NavLink>
+                </NavLinkStyled>
               </li>
-
-              {/* Add the CV page link here */}
               <li>
-                <NavLink
-                  to='/cv'
-                  onClick={() => setIsOpen(false)}
-                  style={({ isActive }) =>
-                    isActive
-                      ? activeStyle
-                      : {
-                          textDecoration: 'none',
-                        }
-                  }
-                >
+                <NavLinkStyled to='/cv' onClick={() => setIsOpen(false)}>
                   CV
-                </NavLink>
+                </NavLinkStyled>
               </li>
             </ul>
           </StyledNav>
@@ -80,12 +55,26 @@ const Burger = () => {
   );
 };
 
-const BurgerWrapper = styled.div`
+// Styled components
+
+const NavWrapper = styled.div`
   position: fixed;
   top: 10px;
-  right: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Space between the label and the burger icon */
+  align-items: center;
+  padding: 0 1rem;
   z-index: 1000;
+`;
+
+const BurgerWrapper = styled.div`
   cursor: pointer;
+`;
+
+const CometLabel = styled.span`
+  color: #757575;
+  font-size: 0%.9;
 `;
 
 const Container = styled.div`
@@ -109,6 +98,15 @@ const StyledNav = styled.nav`
         font-size: 1.5rem;
       }
     }
+  }
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  text-decoration: none;
+  color: #222;
+  font-size: 1.5rem;
+  &.active {
+    text-decoration: underline;
   }
 `;
 
