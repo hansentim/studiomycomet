@@ -83,35 +83,37 @@ const CV = () => {
         <h2>Media</h2>
         <ul>
           <li>
-            Dezeen, article about the NoDe group exhibition during 3 Days of
-            Design - pictures of my furniture:
-            <a
+            <span>
+              Dezeen, article about the NoDe group exhibition during 3 Days of
+              Design - pictures of my furniture:
+            </span>
+            <StyledLink
               href='https://www.dezeen.com/2024/06/17/house-of-nordic-design-node-exhibition/'
               target='_blank'
               rel='noopener noreferrer'
             >
-              Read more
-            </a>
+              Dezeen - Read more
+            </StyledLink>
           </li>
           <li>
-            Sight Unseen, article mentioning Väntrum:
-            <a
+            <span>Sight Unseen, article mentioning Väntrum:</span>
+            <StyledLink
               href='https://www.sightunseen.com/2024/07/week-of-july-8-2024/?fbclid=PAZXh0bgNhZW0CMTEAAabm9lRq00FF8lW8ctzolP32meSJfAof6M_EgnzuZzNuSDlF9STH66N1wBY_aem_eHwph_36UyTXAQBvXe8TFw'
               target='_blank'
               rel='noopener noreferrer'
             >
-              Read more
-            </a>
+              Sight Unseen - Read more
+            </StyledLink>
           </li>
           <li>
-            Disegno, article mentioning Väntrum:
-            <a
+            <span>Disegno, article mentioning Väntrum:</span>
+            <StyledLink
               href='https://disegnojournal.com/newsfeed/southern-sweden-design-days-2024?fbclid=PAZXh0bgNhZW0CMTEAAaYmZXpMSZ3aq8Zd6hpuhl3JXXGcLLbJ0cs1A0gREFzcZDKv81q17K0Df5E_aem_lrZ8GQi2yxt9CsnIVqlggQ'
               target='_blank'
               rel='noopener noreferrer'
             >
-              Read more
-            </a>
+              Disegno - Read more
+            </StyledLink>
           </li>
         </ul>
       </Section>
@@ -220,7 +222,7 @@ const Section = styled.section`
 
 const DownloadLink = styled.div`
   text-align: center;
-  margin: 4rem 0;
+  margin: 3rem 0;
 
   a {
     font-size: 1.5rem;
@@ -239,6 +241,17 @@ const DownloadLink = styled.div`
       font-size: 1.2rem;
       padding: 0.8rem 1.5rem;
     }
+  }
+`;
+
+const StyledLink = styled.a`
+  margin-left: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+    color: #0056b3;
   }
 `;
 
