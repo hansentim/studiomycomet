@@ -26,8 +26,8 @@ const Nav = () => {
         <NavContainer>
           <div className='box'>
             <NavList>
-              <NavLinkStyled to='/contact'>About / Contact</NavLinkStyled>
               <NavLinkStyled to='/cv'>CV</NavLinkStyled>
+              <NavLinkStyled to='/contact'>About / Contact</NavLinkStyled>
             </NavList>
           </div>
         </NavContainer>
@@ -40,7 +40,7 @@ const NavContainer = styled.nav`
   width: 100vw;
   height: 6vh;
 
-  padding: 1rem 7rem 0 0;
+  padding: 1rem 5rem 0 0;
 
   .box {
     height: 100%;
@@ -58,6 +58,7 @@ const NavLinkStyled = styled(NavLink)`
   text-decoration: none;
   border: 1px solid transparent;
   padding: 0.5rem;
+  margin-left: 1rem;
   border-radius: 5px;
   transition: border 0.2s ease-in-out;
 

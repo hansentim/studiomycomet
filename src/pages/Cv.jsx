@@ -6,28 +6,7 @@ const CV = () => {
     <CVContainer>
       <ImageBox />
 
-      <Section>
-        <h2>Education</h2>
-        <ul>
-          <li>
-            2020-2022: Master of Arts and Design, Spatial Design - Royal Danish
-            Academy (KADK)
-          </li>
-          <li>
-            2018: Guest scenographer student project, one semester - The Danish
-            Film School
-          </li>
-          <li>
-            2015-2018: Bachelor of Arts and Design, Spatial Design - Royal
-            Danish Academy (KADK)
-          </li>
-          <li>2009: Intermediala studier 30 ects - Lund University</li>
-          <li>2008: Filmvetenskap 30 ects - Lund University</li>
-          <li>2006-2007: Fotoskolan i Gamleby - Conceptual photography</li>
-          <li>2005-2006: Öland Documentary film school</li>
-        </ul>
-      </Section>
-
+      {/* 1. Work (Present) */}
       <Section>
         <h2>Work</h2>
         <h3>Present</h3>
@@ -41,16 +20,9 @@ const CV = () => {
             illustrator, curator
           </li>
         </ul>
-        <h3>Previous (relevant)</h3>
-        <ul>
-          <li>2010-2023: Weekday</li>
-          <ul>
-            <li>2010-2015: Visual Merchandiser</li>
-            <li>2015-2023: Extra during leave of absence for studies</li>
-          </ul>
-        </ul>
       </Section>
 
+      {/* 2. Galleries */}
       <Section>
         <h2>Galleries</h2>
         <ul>
@@ -58,6 +30,7 @@ const CV = () => {
         </ul>
       </Section>
 
+      {/* 3. Commissioned/Exhibitions */}
       <Section>
         <h2>Commissioned/Exhibitions</h2>
         <h3>2024</h3>
@@ -69,7 +42,7 @@ const CV = () => {
             Design
           </li>
           <li>
-            SSDD - Väntrum (the Waiting room), group exhibition- co-curator,
+            SSDD - Väntrum (the Waiting room), group exhibition - co-curator,
             spatial designer, exhibitor
           </li>
           <li>
@@ -93,6 +66,19 @@ const CV = () => {
         </ul>
       </Section>
 
+      {/* 4. Previous Work (of relevance) */}
+      <Section>
+        <h3>Previous Work (of relevance)</h3>
+        <ul>
+          <li>2010-2023: Weekday</li>
+          <ul>
+            <li>2010-2015: Visual Merchandiser</li>
+            <li>2015-2023: Extra during leave of absence for studies</li>
+          </ul>
+        </ul>
+      </Section>
+
+      {/* 5. Media */}
       <Section>
         <h2>Media</h2>
         <ul>
@@ -129,6 +115,31 @@ const CV = () => {
           </li>
         </ul>
       </Section>
+
+      {/* 6. Education (last section) */}
+      <Section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            2020-2022: Master of Arts and Design, Spatial Design - Royal Danish
+            Academy (KADK)
+          </li>
+          <li>
+            2018: Guest scenographer student project, one semester - The Danish
+            Film School
+          </li>
+          <li>
+            2015-2018: Bachelor of Arts and Design, Spatial Design - Royal
+            Danish Academy (KADK)
+          </li>
+          <li>2009: Intermediala studier 30 ects - Lund University</li>
+          <li>2008: Filmvetenskap 30 ects - Lund University</li>
+          <li>2006-2007: Fotoskolan i Gamleby - Conceptual photography</li>
+          <li>2005-2006: Öland Documentary film school</li>
+        </ul>
+      </Section>
+
+      {/* Download Link */}
       <DownloadLink>
         <a href='/cv.pdf' download='MyComet_CV_October24.pdf'>
           Download CV (PDF)
@@ -138,6 +149,7 @@ const CV = () => {
   );
 };
 
+// Styled components
 const CVContainer = styled.div`
   width: 90vw;
   margin: 0 auto;
@@ -147,16 +159,6 @@ const CVContainer = styled.div`
   @media (max-width: 768px) {
     width: 100vw;
     padding: 1rem;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 2rem;
-
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
   }
 `;
 
