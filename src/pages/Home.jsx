@@ -139,12 +139,13 @@ const StyledImage = styled.img`
     opacity: 0.7;
 
     @media (max-width: 768px) {
-      opacity: 1;
+      opacity: 1; /* Ensure no fade effect on mobile */
+    }
   }
 
   @media (max-width: 768px) {
     height: 60vh;
-    transition: none; 
+    transition: none; /* Disable transition on mobile */
   }
 `;
 

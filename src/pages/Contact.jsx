@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import ImageBox from '../components/ImageBox';
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const Contact = () => {
   return (
     <>
       <Container>
-        <ImageBox />
         <header>
           <p style={{ marginBottom: '2rem' }}>More Info coming soon...</p>
           <p className='mail'>
