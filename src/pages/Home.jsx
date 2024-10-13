@@ -24,11 +24,9 @@ function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleImageClick = (route, image) => {
-    // If route exists, navigate to it
     if (route) {
       navigate(route);
     } else {
-      // If no route and on desktop, open modal
       if (window.innerWidth > 768) {
         setModalImage(image);
         setIsModalOpen(true);
@@ -54,7 +52,7 @@ function Home() {
       <PortfolioContainer>
         {portfolioData.map((item, index) => (
           <ItemContainer key={item.id}>
-            <div>
+            <ImageWrapper>
               <StyledImage
                 src={item.image}
                 alt={item.title}
@@ -62,11 +60,11 @@ function Home() {
                 onClick={() => handleImageClick(item.route, item.image)}
                 clickable={!!item.route}
               />
-            </div>
+              {item.route && <TextOverlay>Tap to View More</TextOverlay>}
+            </ImageWrapper>
           </ItemContainer>
         ))}
       </PortfolioContainer>
-      {/* Render the modal with the clicked image */}
       <Modal
         image={modalImage}
         isOpen={isModalOpen}
@@ -128,24 +126,43 @@ const HomeWrapper = styled.div`
   }
 `;
 
+// Image and Overlay Styles
+const ImageWrapper = styled.div`
+  position: relative;
+`;
+
 const StyledImage = styled.img`
   width: 100%;
   height: 55vh;
   object-fit: contain;
-  cursor: ${(props) => (props.clickable ? 'pointer' : 'default')};
+  cursor: pointer;
   transition: opacity 0.3s ease;
 
   &:hover {
     opacity: 0.7;
-
-    @media (max-width: 768px) {
-      opacity: 1; /* Ensure no fade effect on mobile */
-    }
   }
 
   @media (max-width: 768px) {
     height: 60vh;
-    transition: none; /* Disable transition on mobile */
+    &:hover {
+      opacity: 1;
+    }
+  }
+`;
+
+// Text Overlay for mobile
+const TextOverlay = styled.div`
+  position: absolute;
+  bottom: 5px;
+  right: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  border-radius: 3px;
+
+  @media (min-width: 768px) {
+    display: none; /* Hide on desktop */
   }
 `;
 
