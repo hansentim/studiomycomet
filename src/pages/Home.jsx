@@ -124,7 +124,7 @@ const HomeWrapper = styled.div`
 
   @media (max-width: 768px) {
     width: 100vw;
-    padding: 6rem 1rem 1rem; /* Add padding to the top to make space for the burger menu */
+    padding: 6rem 1rem 1rem;
   }
 `;
 
@@ -135,16 +135,16 @@ const StyledImage = styled.img`
   cursor: ${(props) => (props.clickable ? 'pointer' : 'default')};
   transition: opacity 0.3s ease;
 
-  ${(props) =>
-    !props.clickable &&
-    `
-    &:hover {
-      opacity: 0.7;
-    }
-  `}
+  &:hover {
+    opacity: 0.7;
+
+    @media (max-width: 768px) {
+      opacity: 1;
+  }
 
   @media (max-width: 768px) {
     height: 60vh;
+    transition: none; 
   }
 `;
 
