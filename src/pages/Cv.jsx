@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import ImageBox from '../components/ImageBox';
 
 const CV = () => {
   return (
@@ -17,14 +16,6 @@ const CV = () => {
             Spatial Designer, interior architect, furniture design, applied art,
             illustrator, curator
           </li>
-        </ul>
-      </Section>
-
-      {/* 2. Galleries */}
-      <Section>
-        <h2>Galleries</h2>
-        <ul>
-          <li>Adorno (coming)</li>
         </ul>
       </Section>
 
@@ -68,11 +59,15 @@ const CV = () => {
       <Section>
         <h3>Previous Work (of relevance)</h3>
         <ul>
-          <li>2010-2023: Weekday</li>
-          <ul>
-            <li>2010-2015: Visual Merchandiser</li>
-            <li>2015-2023: Extra during leave of absence for studies</li>
-          </ul>
+          <li>2010-2015: Visual Merchandiser Weekday Malmö</li>
+        </ul>
+      </Section>
+
+      {/* 2. Galleries */}
+      <Section>
+        <h2>Galleries</h2>
+        <ul>
+          <li>Adorno (coming)</li>
         </ul>
       </Section>
 
